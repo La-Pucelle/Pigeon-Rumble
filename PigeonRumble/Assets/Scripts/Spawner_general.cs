@@ -12,7 +12,7 @@ public class Spawner_general : MonoBehaviour
     public bool urgencia;
     public bool cerca;
     public float time_limit;
-    public float cur_time;
+    float cur_time;
     public float low_limit;
     public float up_limit;
 
@@ -32,6 +32,7 @@ public class Spawner_general : MonoBehaviour
         }
         
         Invoke(nameof(Spawn), ChooseTime());
+        Debug.Log("sasdsad");
 
     }
     private GameObject ChooseSpawner()
@@ -45,7 +46,7 @@ public class Spawner_general : MonoBehaviour
             if (res.Length == 0)
             {
                 float dist = Vector3.Distance(spawners[i].transform.position, player.transform.position);
-                if ((cerca && dist > 3f) | !cerca)
+                if ((cerca && dist > 0.01f) | !cerca)
                 {
                     availSpawn.Add(spawners[i]);
                 }
