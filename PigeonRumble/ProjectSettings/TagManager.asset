@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Food
+  - Center
   layers:
   - Default
   - TransparentFX

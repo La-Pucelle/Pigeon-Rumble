@@ -5,13 +5,16 @@ using UnityEngine.AI;
 
 public class Patrol : MonoBehaviour
 {
+    GameObject gameObject;
     public NavMeshAgent agent;
     public float range; //radius of sphere
+    public Transform centrePoint;
 
-    public Transform centrePoint; 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        gameObject = GameObject.FindGameObjectsWithTag("Center")[0];
+        centrePoint = gameObject.GetComponent<Transform>();
     }
 
 
