@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine;
-using UnityEngine.AI;
 
-public class FollowPlayer : MonoBehaviour
+public class Target : MonoBehaviour
 {
     public Transform playerTransform; // Transform del jugador
     private NavMeshAgent agent;       // El NavMeshAgent

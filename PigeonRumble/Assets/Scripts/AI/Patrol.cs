@@ -6,16 +6,15 @@ using UnityEngine.AI;
 public class Patrol : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public float range;
+    public float range; //radius of sphere
 
-    public Transform centrePoint;
-
+    public Transform centrePoint; 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
     }
 
-    
+
     void Update()
     {
         if (agent.remainingDistance <= agent.stoppingDistance)

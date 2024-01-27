@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PriorityAI : MonoBehaviour
 {
-    private string currentState = "idle"; // Initial state
-    public wating = 4.5f
+    public string currentState; // Initial state
+    public float wating = 4.5f;
     void Start()
     { //hola
         // empieza la priorizacion
