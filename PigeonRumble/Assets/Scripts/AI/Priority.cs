@@ -12,9 +12,7 @@ public class Priority : MonoBehaviour
     string currentState ; // Initial state
     public float wating = 20.0f;
     void Start()
-    { //hola
-        // empieza la priorizacion
-
+    {
         currentState = "idle";
         playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
         Debug.Log(playerObject);
@@ -41,6 +39,7 @@ public class Priority : MonoBehaviour
         else if (other.CompareTag("Food"))
         {
             currentState = "eating";
+            DestroyObject(other.gameObject);
         }
 
     }
@@ -52,20 +51,20 @@ public class Priority : MonoBehaviour
             switch (currentState)
             {
                 case "attacking":
-                    Debug.Log("Priority: Attacking");
+                    // Debug.Log("Priority: Attacking");
                     target.playerTransform = Player;
                     yield return new WaitForSeconds(wating);
                     currentState = "idle";
                     break;
                 case "eating":
-                    Debug.Log("Priority: Eating");
+                    // Debug.Log("Priority: Eating");
                     target.playerTransform = Food;
                     yield return new WaitForSeconds(wating);
                     currentState = "idle";
                     break;
                 case "idle":
                 default:
-                    Debug.Log("Priority: Idle");
+                    // Debug.Log("Priority: Idle");
                     yield return new WaitForSeconds(wating);
                     target.playerTransform = null;
                     break;

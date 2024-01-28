@@ -45,7 +45,7 @@ public class Spawner_general : MonoBehaviour
             if (res.Length == 0)
             {
                 float dist = Vector3.Distance(spawners[i].transform.position, player.transform.position);
-                if ((cerca && dist > 0.01f) | !cerca)
+                if ((cerca && dist > 0.3f) | !cerca)
                 {
                     availSpawn.Add(spawners[i]);
                 }
@@ -58,16 +58,7 @@ public class Spawner_general : MonoBehaviour
     private GameObject ChooseSpawnType()
     {
         int newIndex;
-        int limit = 5;
-        if(tipo == "food")
-        {
-            int rng = Random.Range(1, 10);
-            newIndex = rng < limit ? 1 : 0;
-        }
-        else
-        {
-            newIndex = Random.Range(0, spawnTypes.Length);
-        }
+        newIndex = Random.Range(0, spawnTypes.Length);
         return spawnTypes[newIndex];
     }
     private float ChooseTime()
