@@ -13,7 +13,7 @@ public class FoodController : MonoBehaviour
     IEnumerator DestroyObject(GameObject esto)
     {
         yield return new WaitForSeconds(1.0f);
-        Destroy(esto);
+        //Destroy(esto);
     }
 }
 

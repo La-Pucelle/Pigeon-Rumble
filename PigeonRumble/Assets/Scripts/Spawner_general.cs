@@ -28,11 +28,10 @@ public class Spawner_general : MonoBehaviour
         if(target != this.gameObject)
         {
             GameObject type = ChooseSpawnType();
-            Instantiate(type, ChooseSpawner().transform.position, type.transform.rotation);
+            GameObject go = Instantiate(type, ChooseSpawner().transform.position, type.transform.rotation);
         }
         
         Invoke(nameof(Spawn), ChooseTime());
-        Debug.Log("sasdsad");
 
     }
     private GameObject ChooseSpawner()
